@@ -1,6 +1,6 @@
 // Acesso a funcionalidade do AJAX
 
-/*
+/* -------------------------------------------------------------
 
 var xhr = new XMLHttpRequest
 var dados = {};
@@ -14,9 +14,11 @@ xhr.onreadystatechange = function(){
   }
 }
 
-*/
+ ------------------------------------------------------------- */
 
-// Promise
+// Promise -> Funcionamento de uma promise 
+
+/*  -------------------------------------------------------------
 
 var minhaPromise = function(){
   return new Promise(function(resolve,reject){
@@ -37,10 +39,12 @@ var minhaPromise = function(){
  })
 }
 
-minhaPromise()
+   -------------------------------------------------------------*/
+
+axios.get('https://api.github.com/users/VictorSilvaaa')
   .then(function(response){
-      console.log(response);
+      console.log(response.data.avatar_url);
   })
   .catch(function(error){
-      console.log(error);
+      console.warn(error);
   });
